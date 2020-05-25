@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <main class="timer">
+        <header class="timer__header">
+            <h1 class="timer__heading">Timer</h1>
+        </header>
+        <article class="timer__clock">
+            <section class="clock">
+                <input type="number" value="00" min="00" max="60" class="clock__input" data-hours>
+                <label for="hours" class="clock__label">hours</label>
+            </section>
+            <section class="clock">
+                <input type="number" value="00" min="00" max="60" class="clock__input" data-minutes>
+                <label for="minutes" class="clock__label">minutes</label>
+            </section>
+            <section class="clock">
+                <input type="number" value="00" min="00" max="60" class="clock__input" data-seconds>
+                <label for="seconds" class="clock__label">seconds</label>
+            </section>
+        </article>
+        <article class="timer__buttons">
+            <button class="timer__button"><i class="fas fa-check" data-confirm>
+                </i><i class="far fa-edit hide" data-edit></i>
+            </button>
+            <button class="timer__button" disabled='true' data-start><i class="far fa-play-circle" data-play></i>
+                <i class="far fa-pause-circle hide" data-pause></i></button>
+            <button class="timer__button" data-rerun><i class="fas fa-redo"></i></button>
+            <section class="timer__audio">
+                <button class="timer__button timer__button--animated hide" data-alarm><i
+                        class="fas fa-stopwatch "></i></button>
+            </section>
+        </article>
+    </main>
+    <script src="index.js"></script>
+    <script>
+        const timer = new Timer();
+        timer.initializeTimer();
+    </script>
+</body>
+
+</html>

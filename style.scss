@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes vibre {
+    0% {
+        transform: translateX(1px);
+    }
+
+    50% {
+        transform: translateX(-2px);
+    }
+
+    100% {
+        transform: translateX(1px);
+    }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+
+    &__header {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__heading {
+        font-size: 120px;
+        font-weight: 700;
+    }
+
+    &__clock {
+        display: flex;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+        width: 480px;
+        margin-top: 30px;
+    }
+
+    &__button {
+        border: none;
+        font-size: 40px;
+        color: #fff;
+        background-color: #000;
+        cursor: pointer;
+    }
+
+    &__button:hover {
+        color: rgb(12, 240, 240);
+    }
+
+    &__button:disabled {
+        opacity: .5;
+        pointer-events: none;
+    }
+
+    &__button--animated {
+        color: rgb(255, 0, 0);
+        animation: vibre .1s ease infinite;
+    }
+
+    &__button--animated:hover {
+        color: rgb(12, 240, 240);
+    }
+
+    &__audio {
+        position: absolute;
+        bottom: -100px;
+    }
+}
+
+.clock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__input {
+        width: 160px;
+        height: 160px;
+        text-align: center;
+        font-size: 80px;
+        font-family: 'Orbitron', sans-serif;
+        color: #fff;
+        background-color: #000;
+        border: 1px solid #fff;
+    }
+
+    &__label {
+        font-size: 30px;
+    }
+}
+
+.hide {
+    display: none;
+}
