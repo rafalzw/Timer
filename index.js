@@ -56,10 +56,18 @@ class Timer {
     }
 
     timerConfirm() {
+        if (this.hours.value > 99) {
+            this.hours.value = 99;
+            this.minutes.value = 59;
+            this.seconds.value = 59;
+        }
+        this.hours.value = this.hours.value.length < 2 ? `0${this.hours.value}` : this.hours.value;
+        this.minutes.value = this.minutes.value.length < 2 ? `0${this.minutes.value}` : this.minutes.value;
+        this.seconds.value = this.seconds.value.length < 2 ? `0${this.seconds.value}` : this.seconds.value;
+
         this.historyTime = [this.hours.value, this.minutes.value, this.seconds.value];
         this.time = Number(this.hours.value) * 60 * 60 + Number(this.minutes.value) * 60 + Number(this.seconds.value);
         this.toggleShowElement(this.confirmBtn, this.editBtn)
-
         this.toggleDisabledElement(this.startBtn, this.hours, this.minutes, this.seconds);
     }
 
